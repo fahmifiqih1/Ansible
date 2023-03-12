@@ -1,0 +1,17 @@
+- name: nginx
+  hosts: all
+  become: yes
+  vars:
+    - user: "nginx"
+    - group: "sudo"
+
+  tasks:
+    - name: Creating a user nginx 
+      user:
+        name: "{{ user }}"
+        #Generate encrypted password with Python3 or with mkpasswd
+        password: "$6$7Eww92KClr$2F9I2j5PhyGbArXqc3Di2V59IfLqneF5qOW5JQq8YGDefeZnw88ANs88BI2G1n.Ia4T5VnjyR.QDTBXdLD9891"
+        state: present
+        generate_ssh_key: yes
+        group: "{{ group }}"
+        
