@@ -1,29 +1,38 @@
 - name: nginx
   hosts: all
   become: yes
-  vars:
-    user: "fahmi"
-    group: "sudo"
 
   tasks:
-    - name: Install nginx
+    - name: Update & Upgrade system
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install nginx engine
       apt: name=nginx state=latest
 
-    - name: start nginx
-      ansible.builtin.service:
-        name: nginx
-        state: started
-      notify: restart nginx
-
-    - name: Move server
+    - name: Copy Website files to the server's
       ansible.builtin.copy:
-        src: ../templates/
-        dest: /var/www/html/
+        src: ../templates/coffee/
+        dest: /var/www/html/{{ domain }}
         owner: "{{ user }}"
         group: "{{ group }}"
         mode: 0644
       notify: restart nginx
-      
+
+    - name: Copy configuration nginx.conf
+      ansible.builtin.template:
+        src: config/nginx.conf.j2
+        dest: /etc/nginx/sites-enabled/{{ domain }}
+        owner: root
+        group: root
+        mode: 0644
+      register: result_nginx
+    
+    - name: show output Configure
+      ansible.builtin.debug:
+         msg: "configure {{ result_nginx }}"
+
   handlers:
     - name: restart nginx
       service: name=nginx state=restarted

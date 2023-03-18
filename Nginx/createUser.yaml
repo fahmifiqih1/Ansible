@@ -1,9 +1,6 @@
 - name: CreateingUser
   hosts: all
   become: yes
-  vars:
-    - user: "fahmi"
-    - group: "sudo"
 
   tasks:
     - name: Creating a user nginx 
