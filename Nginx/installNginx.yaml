@@ -1,3 +1,29 @@
 - name: nginx
   hosts: all
   become: yes
+  vars:
+    user: "fahmi"
+    group: "sudo"
+
+  tasks:
+    - name: Install nginx
+      apt: name=nginx state=latest
+
+    - name: start nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+      notify: restart nginx
+
+    - name: Move server
+      ansible.builtin.copy:
+        src: ../templates/
+        dest: /var/www/html/
+        owner: "{{ user }}"
+        group: "{{ group }}"
+        mode: 0644
+      notify: restart nginx
+      
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted
