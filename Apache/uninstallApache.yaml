@@ -1,0 +1,20 @@
+---
+- name: Uninstall Nginx
+  hosts: all
+  become: yes
+  
+  tasks:
+    - name: Ensure apache2 is not installed
+      apt: 
+        name: apache2 apache2-utils apache2.2-bin apache2-common
+        state: absent
+        purge: yes
+        autoremove: yes
+
+    - name: Ensure remove folder apache2
+      shell: rm -rf /etc/apache2
+        
+    - name: Stop nginx
+      service:
+          name: apache2
+          state: stopped

@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+
+    ServerName {{ domain }}
+
+    DocumentRoot /var/www/html/{{ domain }}
+    <Directory /var/www/html/{{ domain }}>
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>

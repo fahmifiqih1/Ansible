@@ -1,6 +1,6 @@
 ---
 
-- name: nginx
+- name: Nginx
   hosts: all
   become: yes
 
@@ -22,16 +22,22 @@
         mode: 0644
       notify: restart nginx
 
-    - name: Copy configuration nginx.conf
+    - name: Copy Configuration nginx.conf
       ansible.builtin.template:
         src: config/nginx.conf.j2
-        dest: /etc/nginx/sites-enabled/{{ domain }}
+        dest: /etc/nginx/sites-enabled/{{ domain }}.conf
         owner: root
         group: root
         mode: 0644
       register: result_nginx
+
+    - name: Create symlink
+      file:
+        src: /etc/nginx/sites-available/{{ domain }}.conf
+        dest: /etc/nginx/sites-enabled/{{ domain }}.conf
+        state: link
     
-    - name: show output Configure
+    - name: show Output Configure
       ansible.builtin.debug:
          msg: "configure {{ result_nginx }}"
 

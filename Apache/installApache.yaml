@@ -1,0 +1,53 @@
+---
+
+- name: Apache
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update & Upgrade
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install Apache2
+      apt:
+        name: apache2
+        state: latest
+    
+    - name: Copy Website files to the server
+      ansible.builtin.copy:
+        src: ../templates/coffee/
+        dest: /var/www/html/{{ domain }}
+        owner: "{{ user }}"
+        group: "{{ group }}"
+        mode: 0644
+      notify: restart apache2
+
+    - name: Copy Configuration apache2.conf
+      ansible.builtin.template:
+        src: config/apache2.conf.j2
+        dest: /etc/apache2/sites-available/{{ domain }}.conf
+        owner: root
+        group: root
+        mode: 0644
+      register: result_apache
+      notify: restart apache2
+    
+    - name: Create symlink
+      file:
+        src: /etc/apache2/sites-available/{{ domain }}.conf
+        dest: /etc/apache2/sites-enabled/{{ domain }}.conf
+        state: link
+      notify: restart apache2
+      
+    - name: Show Output Configure
+      ansible.builtin.debug:
+        msg: "configure {{ result_apache }}"
+
+  handlers:
+    - name: restart apache2
+      ansible.builtin.service:
+        name: apache2
+        state: restarted
+
