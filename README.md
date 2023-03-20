@@ -27,20 +27,13 @@ $ pip install --user ansible pywinrm
 ### 🔧 Change Setting
 
 1. Change file inventory.example to inventory, and change ansible_hosts, ansible_user, domain, server_name and replace it with the server configuration you have.
-```
-picture
-```
 
-2. Change key.cer.example to key.cer 
-```
-$ brew install ansible
-```
+![iventory picture]([/assets/images/tux.png](https://drive.google.com/file/d/1zcBcKBpG5h2uV0rKWkvxmjkZ367_bWT7/view?usp=share_link))
 
-3. To install Ansible on WSL ( Windows subsystem for Linux ), the following commands can be run in the bash terminal
+2. That you have to be able to enter the server, or if you use a password you can use mkpasswd then put it in inventory 'ansible_password'
 ```
-$ sudo apt-get update
-$ sudo apt-get install python3-pip git libffi-dev libssl-dev -y
-$ pip install --user ansible pywinrm
+$ sudo apt install mkpasswd
+$ mkpasswd --method=sha-512
 ```
 
 <details>
