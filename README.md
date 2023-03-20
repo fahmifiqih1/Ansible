@@ -68,7 +68,8 @@ $ sudo apt-get update
 $ sudo apt-get install python3-pip git libffi-dev libssl-dev -y
 $ pip install --user ansible pywinrm
 ```
-  
+</details>
+
 <details>
 <summary><h2>🚀 Apache Coniguration</h2></summary>
 
@@ -91,3 +92,4 @@ $ sudo apt-get update
 $ sudo apt-get install python3-pip git libffi-dev libssl-dev -y
 $ pip install --user ansible pywinrm
 ```
+</details>
