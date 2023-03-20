@@ -39,47 +39,19 @@ $ mkpasswd --method=sha-512
 <details>
 <summary><h2>🚀 Nginx Configuration</h2></summary>
 
-1. Install Ansible Engine on Ubuntu
+1. After doing git clone, then do the following steps.
 ```
-$ sudo apt update
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository --yes --update ppa:ansible/ansible
-$ sudo apt install ansible
-```
-
-2. Install Ansible Engine on MacOs With brew.
-```
-$ brew install ansible
-```
-
-3. To install Ansible on WSL ( Windows subsystem for Linux ), the following commands can be run in the bash terminal
-```
-$ sudo apt-get update
-$ sudo apt-get install python3-pip git libffi-dev libssl-dev -y
-$ pip install --user ansible pywinrm
+$ Ansible-Webserver/
+$ ./run_nginx.sh
 ```
 </details>
 
 <details>
 <summary><h2>🚀 Apache Configuration</h2></summary>
 
-1. Install Ansible Engine on Ubuntu
+1. After doing git clone, then do the following steps.
 ```
-$ sudo apt update
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository --yes --update ppa:ansible/ansible
-$ sudo apt install ansible
-```
-
-2. Install Ansible Engine on MacOs With brew.
-```
-$ brew install ansible
-```
-
-3. To install Ansible on WSL ( Windows subsystem for Linux ), the following commands can be run in the bash terminal
-```
-$ sudo apt-get update
-$ sudo apt-get install python3-pip git libffi-dev libssl-dev -y
-$ pip install --user ansible pywinrm
+$ Ansible-Webserver/
+$ ./run_apache.sh
 ```
 </details>
