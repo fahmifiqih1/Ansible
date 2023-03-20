@@ -26,15 +26,12 @@ $ pip install --user ansible pywinrm
 
 ### 🔧 Change Setting
 
-1. Install Ansible Engine on Ubuntu
+1. Change file inventory.example to inventory, and change ansible_hosts, ansible_user, domain, server_name and replace it with the server configuration you have.
 ```
-$ sudo apt update
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository --yes --update ppa:ansible/ansible
-$ sudo apt install ansible
+picture
 ```
 
-2. Install Ansible Engine on MacOs With brew.
+2. Change key.cer.example to key.cer 
 ```
 $ brew install ansible
 ```
@@ -47,7 +44,7 @@ $ pip install --user ansible pywinrm
 ```
 
 <details>
-<summary><h2>🚀 Nginx Coniguration</h2></summary>
+<summary><h2>🚀 Nginx Configuration</h2></summary>
 
 1. Install Ansible Engine on Ubuntu
 ```
@@ -71,7 +68,7 @@ $ pip install --user ansible pywinrm
 </details>
 
 <details>
-<summary><h2>🚀 Apache Coniguration</h2></summary>
+<summary><h2>🚀 Apache Configuration</h2></summary>
 
 1. Install Ansible Engine on Ubuntu
 ```
