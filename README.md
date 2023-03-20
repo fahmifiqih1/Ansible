@@ -36,6 +36,10 @@ $ sudo apt install mkpasswd
 $ mkpasswd --method=sha-512
 ```
 
+2. Replace website on /templtes/website with yours
+
+![Screen Shot 2023-03-21 at 06 28 30](https://user-images.githubusercontent.com/53596721/226487415-d545960e-daea-48f0-b074-e01d802c587f.png)
+
 <details>
 <summary><h2>🚀 Nginx Configuration</h2></summary>
 
