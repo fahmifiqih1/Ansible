@@ -24,6 +24,7 @@ $ sudo apt-get install python3-pip git libffi-dev libssl-dev -y
 $ pip install --user ansible pywinrm
 ```
 
+<details>
 <summary><h2>🚀 Nginx Coniguration</h2></summary>
 
 1. Install Ansible Engine on Ubuntu
