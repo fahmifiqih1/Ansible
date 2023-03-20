@@ -41,7 +41,7 @@ $ mkpasswd --method=sha-512
 
 1. After doing git clone, then do the following steps.
 ```
-$ Ansible-Webserver/
+$ cd Ansible-Webserver/
 $ ./run_nginx.sh
 ```
 </details>
@@ -51,7 +51,7 @@ $ ./run_nginx.sh
 
 1. After doing git clone, then do the following steps.
 ```
-$ Ansible-Webserver/
+$ cd Ansible-Webserver/
 $ ./run_apache.sh
 ```
 </details>
