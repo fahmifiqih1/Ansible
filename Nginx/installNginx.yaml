@@ -15,7 +15,7 @@
 
     - name: Copy Website files to the server's
       ansible.builtin.copy:
-        src: ../templates/coffee/
+        src: ../templates/website/
         dest: /var/www/html/{{ domain }}
         owner: "{{ user }}"
         group: "{{ group }}"
