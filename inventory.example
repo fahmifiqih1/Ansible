@@ -1,3 +1,3 @@
 [development]
-webserver1 ansible_hosts=127.0.0.1 ansible_user=ubuntu
-webserver2 ansible_hosts=127.0.1.1 ansible_user=ubuntu
+webserver1 ansible_hosts=127.0.0.1 ansible_user=ubuntu domain=domain1.trashid.my.id server_name=domain1.trashid.my.id
+webserver2 ansible_hosts=127.0.1.1 ansible_user=ubuntu domain=domain2.trashid.my.id server_name=domain2.trashid.my.id
