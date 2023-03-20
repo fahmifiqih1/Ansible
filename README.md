@@ -28,7 +28,7 @@ $ pip install --user ansible pywinrm
 
 1. Change file inventory.example to inventory, and change ansible_hosts, ansible_user, domain, server_name and replace it with the server configuration you have.
 
-![iventory picture]([/assets/images/tux.png](https://drive.google.com/file/d/1zcBcKBpG5h2uV0rKWkvxmjkZ367_bWT7/view?usp=share_link))
+![iventory picture](https://drive.google.com/file/d/1zcBcKBpG5h2uV0rKWkvxmjkZ367_bWT7/view?usp=share_link)
 
 2. That you have to be able to enter the server, or if you use a password you can use mkpasswd then put it in inventory 'ansible_password'
 ```
